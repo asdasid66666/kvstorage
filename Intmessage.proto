@@ -1,0 +1,14 @@
+syntax = "proto3";
+package a;
+
+message IntMessage {
+    int32 number = 1; // 整型字段
+}//用来给key
+ 
+message voidMessage{
+    oneof num{
+        int32 int_num=1;
+        float float_num=2;
+        string string_num=3;
+    }
+}//用来给value

@@ -1,0 +1,743 @@
+desc: (none)
+cmd: ./a.out
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=1744353445
+mem_heap_B=126552110
+mem_heap_extra_B=89454466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=2549789735
+mem_heap_B=185087683
+mem_heap_extra_B=130850021
+mem_stacks_B=0
+heap_tree=detailed
+n5: 185087683 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 78304520 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 15660920 0x11153F: main (main.cpp:143)
+  n0: 15660920 0x1115D2: main (main.cpp:148)
+  n0: 15660920 0x111665: main (main.cpp:153)
+  n0: 15660880 0x1114AC: main (main.cpp:138)
+  n0: 15660880 0x1116F6: main (main.cpp:158)
+ n1: 46991880 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 46991880 0x1119DD: main (main.cpp:198)
+ n5: 46983240 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 9396648 0x11179D: main (main.cpp:170)
+  n0: 9396648 0x111817: main (main.cpp:175)
+  n0: 9396648 0x111891: main (main.cpp:180)
+  n0: 9396648 0x11190B: main (main.cpp:185)
+  n0: 9396648 0x111989: main (main.cpp:190)
+ n1: 7497290 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 7497290 0x11141E: main (main.cpp:131)
+ n0: 5310753 in 39 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=3
+#-----------
+time=3727830253
+mem_heap_B=270683459
+mem_heap_extra_B=191384173
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=5627433540
+mem_heap_B=408735851
+mem_heap_extra_B=289017637
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=6796416988
+mem_heap_B=493753354
+mem_heap_extra_B=349147230
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=7600092971
+mem_heap_B=552183435
+mem_heap_extra_B=390464157
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=9397402090
+mem_heap_B=682841505
+mem_heap_extra_B=482872463
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=10712511694
+mem_heap_B=778473836
+mem_heap_extra_B=550514412
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=12422155153
+mem_heap_B=902782094
+mem_heap_extra_B=638437146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=13474243513
+mem_heap_B=979278469
+mem_heap_extra_B=692542827
+mem_stacks_B=0
+heap_tree=detailed
+n5: 979278469 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 414503400 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 82900680 0x1114AC: main (main.cpp:138)
+  n0: 82900680 0x11153F: main (main.cpp:143)
+  n0: 82900680 0x1115D2: main (main.cpp:148)
+  n0: 82900680 0x111665: main (main.cpp:153)
+  n0: 82900680 0x1116F6: main (main.cpp:158)
+ n5: 248677368 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 49735488 0x111817: main (main.cpp:175)
+  n0: 49735488 0x111891: main (main.cpp:180)
+  n0: 49735464 0x11179D: main (main.cpp:170)
+  n0: 49735464 0x11190B: main (main.cpp:185)
+  n0: 49735464 0x111989: main (main.cpp:190)
+ n1: 248675712 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 248675712 0x1119DD: main (main.cpp:198)
+ n1: 39682888 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 39682888 0x11141E: main (main.cpp:131)
+ n0: 27739101 in 39 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=11
+#-----------
+time=14920865620
+mem_heap_B=1084419418
+mem_heap_extra_B=766902542
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=16805854408
+mem_heap_B=1221375293
+mem_heap_extra_B=863757595
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=17901777530
+mem_heap_B=1301019137
+mem_heap_extra_B=920077327
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=18778516281
+mem_heap_B=1364754201
+mem_heap_extra_B=965157975
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=20312808997
+mem_heap_B=1476278944
+mem_heap_extra_B=1044024064
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=21408732136
+mem_heap_B=1555926858
+mem_heap_extra_B=1100359462
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=22504657593
+mem_heap_B=1635622281
+mem_heap_extra_B=1156723967
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=24022429767
+mem_heap_B=1745967047
+mem_heap_extra_B=1234769705
+mem_stacks_B=0
+heap_tree=detailed
+n5: 1745967047 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 739041000 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 147808200 0x1114AC: main (main.cpp:138)
+  n0: 147808200 0x11153F: main (main.cpp:143)
+  n0: 147808200 0x1115D2: main (main.cpp:148)
+  n0: 147808200 0x111665: main (main.cpp:153)
+  n0: 147808200 0x1116F6: main (main.cpp:158)
+ n1: 443405208 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 443405208 0x1119DD: main (main.cpp:198)
+ n5: 443352552 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 88670520 0x111817: main (main.cpp:175)
+  n0: 88670520 0x111891: main (main.cpp:180)
+  n0: 88670520 0x11190B: main (main.cpp:185)
+  n0: 88670496 0x11179D: main (main.cpp:170)
+  n0: 88670496 0x111989: main (main.cpp:190)
+ n1: 70793042 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 70793042 0x11141E: main (main.cpp:131)
+ n0: 49375245 in 43 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=19
+#-----------
+time=25775907119
+mem_heap_B=1873453893
+mem_heap_extra_B=1324944411
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=27704734030
+mem_heap_B=2013686836
+mem_heap_extra_B=1424124084
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=29107518623
+mem_heap_B=2115673393
+mem_heap_extra_B=1496249063
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=30159608195
+mem_heap_B=2192161292
+mem_heap_extra_B=1550351564
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=31913090027
+mem_heap_B=2319666608
+mem_heap_extra_B=1640540056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=33666571695
+mem_heap_B=2447127422
+mem_heap_extra_B=1730688674
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=35420052902
+mem_heap_B=2574603110
+mem_heap_extra_B=1820836562
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=36822837800
+mem_heap_B=2676635685
+mem_heap_extra_B=1893001451
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=38225622437
+mem_heap_B=2778622292
+mem_heap_extra_B=1965128356
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=39628407495
+mem_heap_B=2880587732
+mem_heap_extra_B=2037240476
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=41031191986
+mem_heap_B=2982552151
+mem_heap_extra_B=2109357017
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=42433978168
+mem_heap_B=3084560041
+mem_heap_extra_B=2181506391
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=43486066538
+mem_heap_B=3161023004
+mem_heap_extra_B=2235588252
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3161023004 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 1337979280 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 267595880 0x11153F: main (main.cpp:143)
+  n0: 267595880 0x1115D2: main (main.cpp:148)
+  n0: 267595840 0x1114AC: main (main.cpp:138)
+  n0: 267595840 0x111665: main (main.cpp:153)
+  n0: 267595840 0x1116F6: main (main.cpp:158)
+ n5: 802824360 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 160564872 0x11179D: main (main.cpp:170)
+  n0: 160564872 0x111817: main (main.cpp:175)
+  n0: 160564872 0x111891: main (main.cpp:180)
+  n0: 160564872 0x11190B: main (main.cpp:185)
+  n0: 160564872 0x111989: main (main.cpp:190)
+ n1: 802766448 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 802766448 0x1119DD: main (main.cpp:198)
+ n1: 128132437 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 128132437 0x11141E: main (main.cpp:131)
+ n0: 89320479 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=44625828751
+mem_heap_B=3243850920
+mem_heap_extra_B=2294167928
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=46379308433
+mem_heap_B=3371371399
+mem_heap_extra_B=2384359761
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=47694417916
+mem_heap_B=3466989352
+mem_heap_extra_B=2451995712
+mem_stacks_B=0
+heap_tree=detailed
+n5: 3466989352 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 1467512360 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 293502480 0x11153F: main (main.cpp:143)
+  n0: 293502480 0x1115D2: main (main.cpp:148)
+  n0: 293502480 0x111665: main (main.cpp:153)
+  n0: 293502480 0x1116F6: main (main.cpp:158)
+  n0: 293502440 0x1114AC: main (main.cpp:138)
+ n5: 880535928 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 176107200 0x111817: main (main.cpp:175)
+  n0: 176107200 0x111891: main (main.cpp:180)
+  n0: 176107176 0x11179D: main (main.cpp:170)
+  n0: 176107176 0x11190B: main (main.cpp:185)
+  n0: 176107176 0x111989: main (main.cpp:190)
+ n1: 880453056 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 880453056 0x1119DD: main (main.cpp:198)
+ n1: 140528533 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 140528533 0x11141E: main (main.cpp:131)
+ n0: 97959475 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=48571157563
+mem_heap_B=3530703116
+mem_heap_extra_B=2497051804
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=49886267670
+mem_heap_B=3626266290
+mem_heap_extra_B=2564624670
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=50763007755
+mem_heap_B=3689972468
+mem_heap_extra_B=2609675396
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=52516486994
+mem_heap_B=3817420091
+mem_heap_extra_B=2699811469
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=53393226662
+mem_heap_B=3881169059
+mem_heap_extra_B=2744898645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=54708336621
+mem_heap_B=3976737839
+mem_heap_extra_B=2812483969
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=56461816635
+mem_heap_B=4104179122
+mem_heap_extra_B=2902618438
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4104179122 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 1737223560 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 347444720 0x11153F: main (main.cpp:143)
+  n0: 347444720 0x1115D2: main (main.cpp:148)
+  n0: 347444720 0x111665: main (main.cpp:153)
+  n0: 347444720 0x1116F6: main (main.cpp:158)
+  n0: 347444680 0x1114AC: main (main.cpp:138)
+ n5: 1042325064 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 208465032 0x111817: main (main.cpp:175)
+  n0: 208465008 0x11179D: main (main.cpp:170)
+  n0: 208465008 0x111891: main (main.cpp:180)
+  n0: 208465008 0x11190B: main (main.cpp:185)
+  n0: 208465008 0x111989: main (main.cpp:190)
+ n1: 1042294032 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 1042294032 0x1119DD: main (main.cpp:198)
+ n1: 166395259 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 166395259 0x11141E: main (main.cpp:131)
+ n0: 115941207 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=42
+#-----------
+time=57338557194
+mem_heap_B=4167893993
+mem_heap_extra_B=2947671135
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=58653666976
+mem_heap_B=4263485865
+mem_heap_extra_B=3015275871
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=59530406930
+mem_heap_B=4327202363
+mem_heap_extra_B=3060330509
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=61283886150
+mem_heap_B=4454667211
+mem_heap_extra_B=3150477645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=62598995493
+mem_heap_B=4550280116
+mem_heap_extra_B=3218097100
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=63914105726
+mem_heap_B=4645836835
+mem_heap_extra_B=3285665277
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=65229215298
+mem_heap_B=4741397982
+mem_heap_extra_B=3353247754
+mem_stacks_B=0
+heap_tree=detailed
+n5: 4741397982 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 2006870720 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 401374160 0x11153F: main (main.cpp:143)
+  n0: 401374160 0x1115D2: main (main.cpp:148)
+  n0: 401374160 0x111665: main (main.cpp:153)
+  n0: 401374120 0x1114AC: main (main.cpp:138)
+  n0: 401374120 0x1116F6: main (main.cpp:158)
+ n5: 1204247928 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 240849600 0x111817: main (main.cpp:175)
+  n0: 240849600 0x111891: main (main.cpp:180)
+  n0: 240849576 0x11179D: main (main.cpp:170)
+  n0: 240849576 0x11190B: main (main.cpp:185)
+  n0: 240849576 0x111989: main (main.cpp:190)
+ n1: 1204110504 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 1204110504 0x1119DD: main (main.cpp:198)
+ n1: 192261835 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 192261835 0x11141E: main (main.cpp:131)
+ n0: 133906995 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=66105955721
+mem_heap_B=4805179437
+mem_heap_extra_B=3398365011
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=66909631855
+mem_heap_B=4863622862
+mem_heap_extra_B=3439706546
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=67713308084
+mem_heap_B=4921987519
+mem_heap_extra_B=3480977889
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=68516984169
+mem_heap_B=4980397387
+mem_heap_extra_B=3522290861
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=69320660331
+mem_heap_B=5038847006
+mem_heap_extra_B=3563635810
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=70124336476
+mem_heap_B=5097273318
+mem_heap_extra_B=3604954002
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=70928012571
+mem_heap_B=5155738443
+mem_heap_extra_B=3646309861
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=71731688820
+mem_heap_B=5214154797
+mem_heap_extra_B=3687623859
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=72535365532
+mem_heap_B=5272543078
+mem_heap_extra_B=3728915858
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5272543078 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 2231730200 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 446346040 0x1114AC: main (main.cpp:138)
+  n0: 446346040 0x11153F: main (main.cpp:143)
+  n0: 446346040 0x1115D2: main (main.cpp:148)
+  n0: 446346040 0x111665: main (main.cpp:153)
+  n0: 446346040 0x1116F6: main (main.cpp:158)
+ n5: 1339197048 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 267839424 0x111817: main (main.cpp:175)
+  n0: 267839424 0x111891: main (main.cpp:180)
+  n0: 267839400 0x11179D: main (main.cpp:170)
+  n0: 267839400 0x11190B: main (main.cpp:185)
+  n0: 267839400 0x111989: main (main.cpp:190)
+ n1: 1338924576 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 1338924576 0x1119DD: main (main.cpp:198)
+ n1: 213787983 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 213787983 0x11141E: main (main.cpp:131)
+ n0: 148903271 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=73339042560
+mem_heap_B=5330971858
+mem_heap_extra_B=3770242766
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=74142718595
+mem_heap_B=5389390922
+mem_heap_extra_B=3811558494
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=74946394591
+mem_heap_B=5447813183
+mem_heap_extra_B=3852872985
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=75750070690
+mem_heap_B=5506205305
+mem_heap_extra_B=3894169407
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=76553746883
+mem_heap_B=5564601374
+mem_heap_extra_B=3935468858
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=77357423089
+mem_heap_B=5623060766
+mem_heap_extra_B=3976816146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=78161099138
+mem_heap_B=5681477954
+mem_heap_extra_B=4018131566
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=78964775187
+mem_heap_B=5739887884
+mem_heap_extra_B=4059444652
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=79768451246
+mem_heap_B=5798323059
+mem_heap_extra_B=4100782629
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=80572127401
+mem_heap_B=5856723536
+mem_heap_extra_B=4142086232
+mem_stacks_B=0
+heap_tree=detailed
+n5: 5856723536 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 2479012920 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 495802600 0x11153F: main (main.cpp:143)
+  n0: 495802600 0x1115D2: main (main.cpp:148)
+  n0: 495802600 0x111665: main (main.cpp:153)
+  n0: 495802560 0x1114AC: main (main.cpp:138)
+  n0: 495802560 0x1116F6: main (main.cpp:158)
+ n5: 1487578560 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 297515712 0x11179D: main (main.cpp:170)
+  n0: 297515712 0x111817: main (main.cpp:175)
+  n0: 297515712 0x111891: main (main.cpp:180)
+  n0: 297515712 0x11190B: main (main.cpp:185)
+  n0: 297515712 0x111989: main (main.cpp:190)
+ n1: 1487258088 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 1487258088 0x1119DD: main (main.cpp:198)
+ n1: 237485505 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 237485505 0x11141E: main (main.cpp:131)
+ n0: 165388463 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=81375803436
+mem_heap_B=5915129155
+mem_heap_extra_B=4183391605
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=81524858931
+mem_heap_B=5925961612
+mem_heap_extra_B=4191051908
+mem_stacks_B=0
+heap_tree=peak
+n5: 5925961612 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n5: 2508343520 0x1124FA: penqueue(pQueue*, void (*)(int, void*, int, int), int, void*, int, int) (queue.cpp:68)
+  n0: 501668720 0x11153F: main (main.cpp:143)
+  n0: 501668720 0x1115D2: main (main.cpp:148)
+  n0: 501668720 0x111665: main (main.cpp:153)
+  n0: 501668680 0x1114AC: main (main.cpp:138)
+  n0: 501668680 0x1116F6: main (main.cpp:158)
+ n5: 1505117472 0x1125A7: genqueue(gQueue*, void (*)(int, int), int, int) (queue.cpp:90)
+  n0: 301023504 0x111817: main (main.cpp:175)
+  n0: 301023504 0x111891: main (main.cpp:180)
+  n0: 301023504 0x11190B: main (main.cpp:185)
+  n0: 301023480 0x11179D: main (main.cpp:170)
+  n0: 301023480 0x111989: main (main.cpp:190)
+ n1: 1504858176 0x11263B: denqueue(dQueue*, void (*)(int), int) (queue.cpp:110)
+  n0: 1504858176 0x1119DD: main (main.cpp:198)
+ n1: 240298441 0x11105B: generate_random_string() (main.cpp:50)
+  n0: 240298441 0x11141E: main (main.cpp:131)
+ n0: 167344003 in 46 places, all below massif's threshold (1.00%)
