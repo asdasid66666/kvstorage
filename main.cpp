@@ -3,6 +3,7 @@
 #include <time.h>
 #include <pthread.h>
 #include "global.h"
+#include <unistd.h> 
 #include <unordered_map>
 #include "Intmessage.pb.h"
 
@@ -63,9 +64,6 @@ int main()
 {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
   Filefd = createfile("DAWENJIAN");
-  int put_id = 0;
-  int get_id = 0;
-  // 对两个命令进行编号 并放入相应的命令队列中 del命令无需编号 因为只设置一个del队列
   pQueue p[5];
   gQueue g[5];                  // 队列数组中每个元素直接为一个队列
   dQueue d = (*createdQueue()); // 创建一个del队列
@@ -98,111 +96,86 @@ int main()
   {
     perror("Failed to start delthread!\n");
   } // 启动一个唯一的del线程
-  // 先用随机发生器产生命令及参数
-  while (true) // 每个循环产生一个命令
+  for (int i = 0;; i++)
   {
-    int command = rand() % 3;
-    switch (command)
+    for (int j = 0; j < 100000; j++) // 先产生Put命令
     {
-    case 0: // put
-    {
-      // generate the key and value
-      put_id++;
-      int key = rand() % MAX_KEY;
-      int valtype = rand() % 3;
+      int key = i * 100000 + j; // 确定一个key
+      int valtype = 0;
       void *value;
-      switch (valtype)
-      {
-      case 0:
-      {
-        value = malloc(sizeof(int));
-        *(int *)value = generate_random_int(); // val为整形
-        break;
-      }
-      case 1:
-      {
-        value = malloc(sizeof(float));
-        *(float *)value = generate_random_float(); // 浮点型
-        break;
-      }
-
-      case 2:
-      {
-        value = generate_random_string(); // 字符串型
-        break;
-      }
-      } // 将put命令放入对应的队列中
-      if (put_id % 5 == 0)
+      value = malloc(sizeof(int));
+      *(int *)value = key+1; // val为整形
+      // 确定一个对应的value
+      // 放置到对应队列
+      if (j % 5 == 0)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[0], put_function_pointer, key, value, put_id % 5, valtype);
+        penqueue(&p[0], put_function_pointer, key, value, j % 5, valtype);
       }
-      else if (put_id % 5 == 1)
+      else if (j % 5 == 1)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[1], put_function_pointer, key, value, put_id % 5, valtype);
+        penqueue(&p[1], put_function_pointer, key, value, j % 5, valtype);
       }
-      else if (put_id % 5 == 2)
+      else if (j % 5 == 2)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[2], put_function_pointer, key, value, put_id % 5, valtype);
+        penqueue(&p[2], put_function_pointer, key, value, j % 5, valtype);
       }
-      else if (put_id % 5 == 3)
+      else if (j % 5 == 3)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[3], put_function_pointer, key, value, put_id % 5, valtype);
+        penqueue(&p[3], put_function_pointer, key, value, j % 5, valtype);
       }
-      else if (put_id % 5 == 4)
+      else if (j % 5 == 4)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[4], put_function_pointer, key, value, put_id % 5, valtype);
+        penqueue(&p[4], put_function_pointer, key, value, j % 5, valtype);
       } // 结束放置
-      break;
     }
-    case 1: // get
+    sleep(25);
+    for (int k = 0; k < 100000; k++) // 产生get命令
     {
-      get_id++;
-      int key = rand() % MAX_KEY;
-      // 将get命令放入对应的队列中
-      if (get_id % 5 == 0)
+      int key = i * 100000 + k; // 确定一个key
+      // 放置到对应队列
+      if (k % 5 == 0)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[0], get_function_pointer, key, get_id % 5);
+        genqueue(&g[0], get_function_pointer, key, k % 5);
       }
-      else if (get_id % 5 == 1)
+      else if (k % 5 == 1)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[1], get_function_pointer, key, get_id % 5);
+        genqueue(&g[1], get_function_pointer, key, k % 5);
       }
-      else if (get_id % 5 == 2)
+      else if (k % 5 == 2)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[2], get_function_pointer, key, get_id % 5);
+        genqueue(&g[2], get_function_pointer, key, k % 5);
       }
-      else if (get_id % 5 == 3)
+      else if (k % 5 == 3)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[3], get_function_pointer, key, get_id % 5);
+        genqueue(&g[3], get_function_pointer, key, k % 5);
       }
-      else if (get_id % 5 == 4)
+      else if (k % 5 == 4)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[4], get_function_pointer, key, get_id % 5);
+        genqueue(&g[4], get_function_pointer, key, k % 5);
       } // 结束放置
-      break;
     }
-    case 2: // del
+    for (int h = 0; h < 100000; h++)
     {
-      int key = rand() % MAX_KEY;
+      int key = i * 100000 + h;
       void (*del_function_pointer)(int) = del;
-      denqueue(&d, del_function_pointer, key); // del命令直接放入del命令队列
-      break;
+      denqueue(&d, del_function_pointer, key);
     }
-    default:
-    {
-      printf("Unknown command!\n");
-    }
-    } // end of switch(command)
-  } // while(produce command)
+  }
   return 0;
 }
+
+/*1.先产生100000个put命令
+用i作为key 随机发生器产生对应的value
+2.产生100000个get命令
+3.产生100000个del命令
+4.总体是个for循环 for(i=0;;i++)*/
