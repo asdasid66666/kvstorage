@@ -1,2 +1,6 @@
 DAWENJIAN
 a.out
+core
+*tmp*
+*perf*
+*output*

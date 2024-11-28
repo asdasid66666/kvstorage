@@ -97,6 +97,20 @@ extern int *write_readbuf_num; // 每个数组元素的值表示对应的读线�
 extern pthread_mutex_t cacheMutex; // cache操作锁
 extern pthread_mutex_t mapMutex;   // hashmap的锁 用于写线程独立进行map节点插入操作
 
+extern pthread_mutex_t put0Mutex; 
+extern pthread_mutex_t put1Mutex; 
+extern pthread_mutex_t put2Mutex; 
+extern pthread_mutex_t put3Mutex; 
+extern pthread_mutex_t put4Mutex; 
+
+extern pthread_mutex_t get0Mutex; 
+extern pthread_mutex_t get1Mutex; 
+extern pthread_mutex_t get2Mutex; 
+extern pthread_mutex_t get3Mutex; 
+extern pthread_mutex_t get4Mutex;
+
+extern pthread_mutex_t delMutex;
+
 int createfile(std::string filename);
 void writekeyval(int Filefd, int thread_num);
 unsigned char *getv(int Filefd, int valoffset, int length, int thread_num); // 存储层接口
@@ -135,17 +149,49 @@ void del(int key);
 pQueue *createpQueue();
 gQueue *creategQueue();
 dQueue *createdQueue();
-bool ispEmpty(pQueue *queue);
-bool isgEmpty(gQueue *queue);
+bool isp0Empty(pQueue *queue);
+bool isp1Empty(pQueue *queue);
+bool isp2Empty(pQueue *queue);
+bool isp3Empty(pQueue *queue);
+bool isp4Empty(pQueue *queue);
+bool isg0Empty(gQueue *queue);
+bool isg1Empty(gQueue *queue);
+bool isg2Empty(gQueue *queue);
+bool isg3Empty(gQueue *queue);
+bool isg4Empty(gQueue *queue);
 bool isdEmpty(dQueue *queue);
-void penqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
-void genqueue(gQueue *queue, void (*value)(int, int), int key, int id);
+void p0enqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
+void p1enqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
+void p2enqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
+void p3enqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
+void p4enqueue(pQueue *queue, void (*value)(int, void *, int, int), int key, void *val, int id, int valtype);
+void g0enqueue(gQueue *queue, void (*value)(int, int), int key, int id);
+void g1enqueue(gQueue *queue, void (*value)(int, int), int key, int id);
+void g2enqueue(gQueue *queue, void (*value)(int, int), int key, int id);
+void g3enqueue(gQueue *queue, void (*value)(int, int), int key, int id);
+void g4enqueue(gQueue *queue, void (*value)(int, int), int key, int id);
 void denqueue(dQueue *queue, void (*value)(int), int key);
-pNode *depqueue(pQueue *queue);
-gNode *degqueue(gQueue *queue);
+pNode *dep0queue(pQueue *queue);
+pNode *dep1queue(pQueue *queue);
+pNode *dep2queue(pQueue *queue);
+pNode *dep3queue(pQueue *queue);
+pNode *dep4queue(pQueue *queue);
+gNode *deg0queue(gQueue *queue);
+gNode *deg1queue(gQueue *queue);
+gNode *deg2queue(gQueue *queue);
+gNode *deg3queue(gQueue *queue);
+gNode *deg4queue(gQueue *queue);
 dNode *dedqueue(dQueue *queue);
 // 队列的接口
 
-void *put_thread_function(void *arg);
+void *put0_thread_function(void *arg);
+void *put1_thread_function(void *arg);
+void *put2_thread_function(void *arg);
+void *put3_thread_function(void *arg);
+void *put4_thread_function(void *arg);
+void *get0_thread_function(void *arg);
+void *get1_thread_function(void *arg);
+void *get2_thread_function(void *arg);
+void *get3_thread_function(void *arg);
 void *get_thread_function(void *arg);
 void *del_thread_function(void *arg); // 线程的接口函数

@@ -3,7 +3,7 @@
 #include <time.h>
 #include <pthread.h>
 #include "global.h"
-#include <unistd.h> 
+#include <unistd.h>
 #include <unordered_map>
 #include "Intmessage.pb.h"
 
@@ -30,6 +30,20 @@ int *write_readbuf_num = (int *)calloc(5, sizeof(int)); // 每个数组元素的
 
 pthread_mutex_t cacheMutex = PTHREAD_MUTEX_INITIALIZER; // cache操作锁
 pthread_mutex_t mapMutex = PTHREAD_MUTEX_INITIALIZER;   // hashmap的锁 用于写线程独立进行map节点插入操作
+
+pthread_mutex_t put0Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t put1Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t put2Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t put3Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t put4Mutex = PTHREAD_MUTEX_INITIALIZER;
+
+pthread_mutex_t get0Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t get1Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t get2Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t get3Mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t get4Mutex = PTHREAD_MUTEX_INITIALIZER;
+
+pthread_mutex_t delMutex = PTHREAD_MUTEX_INITIALIZER;
 
 // 随机生成一个整数
 int generate_random_int()
@@ -78,20 +92,49 @@ int main()
   {
     g[j] = (*creategQueue());
   } // 创建五个get命令队列
-  for (int i = 0; i < 5; i++)
+
+  if (pthread_create(&put_thread[0], NULL, put0_thread_function, &p[0]) != 0)
   {
-    if (pthread_create(&put_thread[i], NULL, put_thread_function, &p[i]) != 0)
-    {
-      perror("Failed to start putthread!\n");
-    }
-  } // 启动五个写线程 不断地从Put队列中取put并执行
-  for (int j = 0; j < 5; j++)
+    perror("Failed to start putthread0!\n");
+  }
+  if (pthread_create(&put_thread[1], NULL, put1_thread_function, &p[1]) != 0)
   {
-    if (pthread_create(&get_thread[j], NULL, get_thread_function, &g[j]) != 0)
-    {
-      perror("Failed to start getthread!\n");
-    }
-  } // 启动五个读线程 不断地从get队列中取get并执行
+    perror("Failed to start putthread1!\n");
+  }
+  if (pthread_create(&put_thread[2], NULL, put2_thread_function, &p[2]) != 0)
+  {
+    perror("Failed to start putthread2!\n");
+  }
+  if (pthread_create(&put_thread[3], NULL, put3_thread_function, &p[3]) != 0)
+  {
+    perror("Failed to start putthread3!\n");
+  }
+  if (pthread_create(&put_thread[4], NULL, put4_thread_function, &p[4]) != 0)
+  {
+    perror("Failed to start putthread4!\n");
+  }
+  // 启动五个写线程 不断地从Put队列中取put并执行
+  if (pthread_create(&get_thread[0], NULL, get0_thread_function, &g[0]) != 0)
+  {
+    perror("Failed to start getthread0!\n");
+  }
+  if (pthread_create(&get_thread[1], NULL, get1_thread_function, &g[1]) != 0)
+  {
+    perror("Failed to start getthread1!\n");
+  }
+  if (pthread_create(&get_thread[2], NULL, get2_thread_function, &g[2]) != 0)
+  {
+    perror("Failed to start getthread2!\n");
+  }
+  if (pthread_create(&get_thread[3], NULL, get3_thread_function, &g[3]) != 0)
+  {
+    perror("Failed to start getthread3!\n");
+  }
+  if (pthread_create(&get_thread[4], NULL, get4_thread_function, &g[4]) != 0)
+  {
+    perror("Failed to start getthread4!\n");
+  }
+  // 启动五个读线程 不断地从get队列中取get并执行
   if (pthread_create(&del_thread, NULL, del_thread_function, &d) != 0)
   {
     perror("Failed to start delthread!\n");
@@ -104,33 +147,33 @@ int main()
       int valtype = 0;
       void *value;
       value = malloc(sizeof(int));
-      *(int *)value = key+1; // val为整形
+      *(int *)value = key + 1; // val为整形
       // 确定一个对应的value
       // 放置到对应队列
       if (j % 5 == 0)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[0], put_function_pointer, key, value, j % 5, valtype);
+        p0enqueue(&p[0], put_function_pointer, key, value, j % 5, valtype);
       }
       else if (j % 5 == 1)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[1], put_function_pointer, key, value, j % 5, valtype);
+        p1enqueue(&p[1], put_function_pointer, key, value, j % 5, valtype);
       }
       else if (j % 5 == 2)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[2], put_function_pointer, key, value, j % 5, valtype);
+        p2enqueue(&p[2], put_function_pointer, key, value, j % 5, valtype);
       }
       else if (j % 5 == 3)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[3], put_function_pointer, key, value, j % 5, valtype);
+        p3enqueue(&p[3], put_function_pointer, key, value, j % 5, valtype);
       }
       else if (j % 5 == 4)
       {
         void (*put_function_pointer)(int, void *, int, int) = put;
-        penqueue(&p[4], put_function_pointer, key, value, j % 5, valtype);
+        p4enqueue(&p[4], put_function_pointer, key, value, j % 5, valtype);
       } // 结束放置
     }
     sleep(25);
@@ -141,27 +184,27 @@ int main()
       if (k % 5 == 0)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[0], get_function_pointer, key, k % 5);
+        g0enqueue(&g[0], get_function_pointer, key, k % 5);
       }
       else if (k % 5 == 1)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[1], get_function_pointer, key, k % 5);
+        g1enqueue(&g[1], get_function_pointer, key, k % 5);
       }
       else if (k % 5 == 2)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[2], get_function_pointer, key, k % 5);
+        g2enqueue(&g[2], get_function_pointer, key, k % 5);
       }
       else if (k % 5 == 3)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[3], get_function_pointer, key, k % 5);
+        g3enqueue(&g[3], get_function_pointer, key, k % 5);
       }
       else if (k % 5 == 4)
       {
         void (*get_function_pointer)(int, int) = get;
-        genqueue(&g[4], get_function_pointer, key, k % 5);
+        g4enqueue(&g[4], get_function_pointer, key, k % 5);
       } // 结束放置
     }
     for (int h = 0; h < 100000; h++)
